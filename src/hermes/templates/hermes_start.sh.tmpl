@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Import mnemonic for chain A
+echo '{{ .ChainAMnemonic }}' > /root/.hermes/{{ .ChainAID }}-mnemonic
+hermes keys add --chain {{ .ChainAID }} --key-name source-key {{ .ChainAHDPath }} --mnemonic-file /root/.hermes/{{ .ChainAID }}-mnemonic
+
+# Import mnemonic for chain B
+echo '{{ .ChainBMnemonic }}' > /root/.hermes/{{ .ChainBID }}-mnemonic
+hermes keys add --chain {{ .ChainBID }} --key-name peer-key {{ .ChainBHDPath }} --mnemonic-file /root/.hermes/{{ .ChainBID }}-mnemonic
+
+# Create the IBC channel and start Hermes relayer
+hermes create channel --a-chain {{ .ChainAID }} --b-chain {{ .ChainBID }} --a-port transfer --b-port transfer --new-client-connection --yes && hermes start

@@ -1,0 +1,26 @@
+participants:
+  - image: tiljordan/hermes:latest
+    telemetry_port: 7698
+    rest_port: 3000
+    chain_a:
+      chain_id: coreum-devnet-1
+      type: coreum
+      rpc_addr: http://timid-tiger-node-1-02600514-9ae2-4018.lzeroanalytics.com:80/rpc
+      grpc_addr: http://timid-tiger-node-1-02600514-9ae2-4018.lzeroanalytics.com:80
+      account_prefix: devcore
+      max_gas: 50000000
+      gas_price:
+        amount: 0.0625
+        denom: udevcore
+      mnemonic: certain regret symptom mansion rate guilt torch liquid one again glass remember enjoy lens interest fade close stove purchase couple laptop water tomorrow menu
+    chain_b:
+      chain_id: testnet-1
+      type: gaia
+      rpc_addr: http://gentle-chimpanzee-node-1-21a8915f-4525-44ae.lzeroanalytics.com:80/rpc
+      grpc_addr: http://gentle-chimpanzee-node-1-21a8915f-4525-44ae.lzeroanalytics.com:80
+      account_prefix: cosmos
+      max_gas: 50000000
+      gas_price:
+        amount: 0.0625
+        denom: stake
+      mnemonic: cube draw world deer visit jump eager demand erupt example web arrest side subject twist elephant mercy dry dutch onion crew win supreme squirrel

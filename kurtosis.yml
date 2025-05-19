@@ -1,1 +1,28 @@
 name: github.com/LZeroAnalytics/ibc-package
+description: |
+  IBC (Inter-Blockchain Communication)
+  ==================================
+  This Kurtosis package instantiates an environment for Inter-Blockchain Communication between Cosmos SDK-based blockchains. It includes Hermes relayer for cross-chain communication and support for multiple connected chains.
+
+  Prerequisites
+  -------------
+  - At least two running Cosmos SDK-based blockchains with IBC capabilities
+  - Access to validator keys and configurations for both chains
+
+  Configuration
+  -------------
+  To configure this package, you'll need to provide the following information:
+  - `chains`: Configuration for participating chains
+    - `chain_id`: Unique identifier for each chain
+    - `rpc_url`: RPC endpoint for each chain
+    - `grpc_url`: gRPC endpoint for each chain
+    - `account_prefix`: Address prefix for the chain
+    - `gas_price`: Gas price configuration
+  - `connections`: Configuration for IBC connections
+    - `src_chain`: Source chain identifier
+    - `dst_chain`: Destination chain identifier
+    - `channels`: Channel configuration for different port IDs
+  - `relayer_config`: Hermes relayer configuration
+    - `mnemonic`: Mnemonic for relayer account(s)
+    - `clear_packets_interval`: Interval for clearing packets
+    - `trust_threshold`: Trust threshold for light clients
